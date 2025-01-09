@@ -6,14 +6,6 @@
     padding: 0;
 }
 
-@font-face {
-    font-family: "Lato";
-    src: url('698242188-Lato-Bla.eot');
-    src: url('698242188-Lato-Bla.eot?#iefix') format('embedded-opentype'), url('698242188-Lato-Bla.svg#Lato Black') format('svg'), url('698242188-Lato-Bla.woff') format('woff'), url('698242188-Lato-Bla.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     font-family: "Lato", sans-serif;
     scroll-behavior: smooth;
@@ -50,6 +42,48 @@ a {
     cursor: pointer;
 }
 
+#header__check {
+    display: none;
+}
+
+#header__check:checked~.menu {
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    top: 75px;
+    right: 20%;
+    z-index: 2;
+    transition: right 1s;
+    background: #fff;
+    padding: 32px 74px 32px 32px;
+    &__heading {
+        color: #000;
+        font-size: 14px;
+        font-family: Lato;
+        font-weight: 700;
+    }
+    &__title {
+        display: block;
+        margin: 24px 0 12px 0;
+        color: #F16D7F;
+        font-size: 14px;
+        font-family: Lato;
+    }
+    &__list {
+        padding-left: 20px;
+        list-style: none;
+        display: grid;
+        gap: 11px;
+        & a {
+            color: #6F6E6E;
+            font-size: 14px;
+            font-family: Lato;
+        }
+    }
+}
+
 .promo {
     display: flex;
     background: $promo_color;
@@ -69,16 +103,10 @@ a {
         padding-left: 16px;
     }
     &__title {
-        @include promo_text_settings(900,
-        48px,
-        58px,
-        $color_box);
+        @include promo_text_settings(900, 48px, 58px, $color_box);
     }
     &__heading {
-        @include promo_text_settings(700,
-        32px,
-        38px,
-        $color_box);
+        @include promo_text_settings(700, 32px, 38px, $color_box);
     }
 }
 
@@ -110,31 +138,19 @@ a {
         @include center_coloumn();
     }
     &__text {
-        @include text_settings(400,
-        16px,
-        19px,
-        $white_color);
+        @include text_settings(400, 16px, 19px, $white_color);
     }
     &__heading {
-        @include text_settings(700,
-        24px,
-        29px,
-        $main_color);
+        @include text_settings(700, 24px, 29px, $main_color);
     }
 }
 
 .product-box {
     &__heading {
-        @include text_settings(400,
-        30px,
-        36px,
-        $color_box);
+        @include text_settings(400, 30px, 36px, $color_box);
     }
     &__text {
-        @include product_text_setting(400,
-        14px,
-        17px,
-        $text_color);
+        @include product_text_setting(400, 14px, 17px, $text_color);
     }
     &__content {
         margin-top: 48px;
@@ -152,10 +168,7 @@ a {
             background-color: white;
             border: 1px solid #FF6A6A;
             cursor: pointer;
-            @include promo_text_settings(400,
-            16px,
-            19px,
-            #F26376)
+            @include promo_text_settings(400, 16px, 19px, #F26376)
         }
     }
 }
@@ -264,7 +277,7 @@ a {
     min-height: 448px;
     background-size: cover;
     background-position: center;
-    background-image: url(../images/fon.svg);
+    background-image: url(../img/fon.svg);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
